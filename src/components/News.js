@@ -15,6 +15,7 @@ export class News extends Component {
         pageSize:PropTypes.number,
         category:PropTypes.string
     }
+    
     constructor(){
         super();
         console.log("cons from news")
@@ -77,9 +78,10 @@ export class News extends Component {
     }
 
     render() {
+        
         return (
             <div className='container my-3'>
-                <h2>Top News - Headlines</h2>
+                <h2>Top News - {this.props.category}</h2>
                 {this.state.loading && <Spinner/>}
                 <div className='row'>
                 {!this.state.loading && this.state.articles.map((elem)=>{
